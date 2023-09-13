@@ -20,6 +20,7 @@ void times_table(void)
 				_putchar((j * i) + 48);
 				_putchar(',');
 				_putchar(' ');
+				_putchar(' ');
 			}
 			else if (j * i > 9 && j < 9)
 			{

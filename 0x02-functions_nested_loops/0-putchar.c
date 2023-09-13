@@ -1,14 +1,16 @@
 #include "main.h"
-
 /**
- *  _putchar - prints char
+ *  main -Entry point
  *
- *	@c: char
- *
- *  Return: void
+ *  Return: Always 0 (Success)
  */
-
-void	_putchar(char c)
+int main(void)
 {
-	write(1, &c, 1);
+	int i = 0;
+	char *str = "_putchar";
+
+	while (str[i])
+		_putchar(str[i++]);
+	_putchar('\n');
+	return (0);
 }

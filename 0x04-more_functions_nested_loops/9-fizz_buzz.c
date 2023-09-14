@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
-*	fizz_buzz - print numebr from 1 - 100 with fizzbuzz
+*	main - entry poit
 *
-*	Return: void
+*	Return: always 0 when success
 *
 **/
 
-void	fizz_buzz(void)
+int	main(void)
 {
 	int	i = 0;
 	
@@ -25,4 +25,5 @@ void	fizz_buzz(void)
 			printf(" ");
 		i++;
 	}
+	return (0);
 }

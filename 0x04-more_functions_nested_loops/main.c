@@ -2,6 +2,6 @@
 
 int main ()
 {
-	print_diagonal(0);
+	print_diagonal(10);
 	return (0);
 }

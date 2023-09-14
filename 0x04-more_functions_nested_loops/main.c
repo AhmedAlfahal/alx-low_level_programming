@@ -2,6 +2,6 @@
 
 int main ()
 {
-	fizz_buzz();
+	print_triangle(1);
 	return (0);
 }

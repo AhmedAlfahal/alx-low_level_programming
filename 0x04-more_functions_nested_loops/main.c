@@ -2,6 +2,6 @@
 
 int main ()
 {
-	print_square(1);
+	fizz_buzz();
 	return (0);
 }

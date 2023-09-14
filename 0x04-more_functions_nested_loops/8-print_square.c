@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-*	print_diagonal - draw a @n diagonal
+*	print_square - draw '#' with a size of (@size * @size)
 *
-*	@n: int
+*	@size: int
 *
 *	Return: void
 **/

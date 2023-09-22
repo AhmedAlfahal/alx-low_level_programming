@@ -28,6 +28,7 @@ void reverse_array(int *a, int n)
 		i++;
 	}
 	i = 0;
+	n--;
 	while (n >= 0)
 		a[n--] = tmp[i++];
 	free(tmp);

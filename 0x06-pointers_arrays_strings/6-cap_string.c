@@ -18,7 +18,10 @@ char *cap_string(char *s)
 		return (NULL);
 	while (s[i])
 	{
-		if ((s[i] < 'A' && s[i] > 'Z') && (s[i] < 'a' && s[i] > 'z'))
+		if (s[i] == ' ' || s[i] == '	' || s[i] == '\n'
+		|| s[i] == ',' || s[i] == ';' || s[i] == '.' || s[i] == '!'
+		|| s[i] == '?' || s[i] == '"' || s[i] == '(' ||  s[i] == ')'
+		|| s[i] == '{' ||  s[i] == '}')
 		{
 			i++;
 			continue;

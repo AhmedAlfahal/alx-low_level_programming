@@ -19,7 +19,7 @@ void print_array(int *a, int n)
 
 int main(void)
 {
-    int a[] = {4242, 1, 424242};
+    int a[] = {0,0,1};
 
     print_array(a, sizeof(a) / sizeof(int));
     reverse_array(a, sizeof(a) / sizeof(int));

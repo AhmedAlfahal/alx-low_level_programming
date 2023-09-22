@@ -32,7 +32,12 @@ char *cap_string(char *s)
 			continue;
 		}
 		else
-			i++;
+		{
+			while (s[i] && ((s[i] >= 'A' && s[i] <= 'Z')
+					|| (s[i] >= 'a' && s[i] <= 'z')))
+				i++;
+		}
+		i++;
 	}
 	return (s);
 }

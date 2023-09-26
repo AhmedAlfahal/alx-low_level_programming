@@ -13,15 +13,17 @@
 **/
 
 
-char *_memset(char *s, char b, unsigned int n)
+char	*_memset(char *s, char b, unsigned int n)
 {
-	size_t i = 0;
-	char    *new = NULL;
+	char			*ptr;
+	unsigned int	i;
 
+	ptr = s;
+	i = 0;
 	while (i < n)
 	{
-		new[i] = b;
+		ptr[i] = b;
 		i++;
 	}
-	return (b);
+	return (s);
 }

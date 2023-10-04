@@ -36,7 +36,7 @@ char	*_strdup(char *str)
 	i = 0;
 	if (!str)
 		return (NULL);
-	dup = (char *) malloc(sizeof(char) * _strlen(str) + 2);
+	dup =  malloc(sizeof(char) * _strlen(str) + 2);
 	if (dup == NULL)
 		return (0);
 	while (str[i])
@@ -74,8 +74,8 @@ char	*str_concat(char *s1, char *s2)
 		return (_strdup(s2));
 	if (!s1 && !s2)
 		return (_strdup(""));
-	dup = (char *) malloc(sizeof(char) * _strlen(s1)
-			+ sizeof(char) * _strlen(s2) + 2);
+	dup = malloc((sizeof(char) * _strlen(s1))
+			+ (sizeof(char) * _strlen(s2)) + 2);
 	if (!dup)
 		return (NULL);
 	while (s1[i] != '\0')

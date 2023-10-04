@@ -72,7 +72,7 @@ char	*str_concat(char *s1, char *s2)
 	if (!s1 && s2)
 		return (_strdup(s2));
 	if (!s1 && !s2)
-		return (NULL);
+		return (_strdup(""));
 	dup = (char *) malloc(sizeof(char) * _strlen(s1)
 			+ sizeof(char) * _strlen(s2) + 1);
 	if (!dup)

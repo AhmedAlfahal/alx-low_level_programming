@@ -41,6 +41,7 @@ void	_memset(void *s, char b, unsigned int n)
 void	alx_free(int **tmp, int size)
 {
 	int i = 0;
+
 	while (i < size)
 	{
 		free(tmp[i]);
@@ -75,7 +76,7 @@ int	**alloc_grid(int width, int height)
 	{
 		new[i] = malloc(sizeof(int) * width);
 		if (!new[i])
-			return (alx_free(new, i - 1), NULL);
+			return (alx_free(new, i), NULL);
 		_memset(new[i], 0, width);
 		i++;
 	}

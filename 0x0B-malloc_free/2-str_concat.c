@@ -20,6 +20,35 @@ int	_strlen(char *s)
 }
 
 /**
+*	_strdup - duplicate a string
+*
+*	@str: char *
+*
+*	Return: the pointer to the string or NULL
+*
+**/
+
+char	*_strdup(char *str)
+{
+	char	*dup;
+	int		i;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	dup = (char *) malloc(sizeof(char) * _strlen(str) + 1);
+	if (dup == NULL)
+		return (0);
+	while (str[i])
+	{
+		dup[i] = str[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+/**
 *	str_concat - joining s1 + s2
 *
 *	@s1: char *
@@ -39,9 +68,9 @@ char	*str_concat(char *s1, char *s2)
 	i = 0;
 	j = 0;
 	if (s1 && !s2)
-		return ((char *)s1);
+		return (_strdup(s1));
 	if (!s1 && s2)
-		return ((char *)s2);
+		return (_strdup(s2));
 	if (!s1 && !s2)
 		return (NULL);
 	dup = (char *) malloc(sizeof(char) * _strlen(s1)

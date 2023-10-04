@@ -2,9 +2,9 @@
 
 /**
 *	_strlen - fins length of string
-*	
+*
 *	@s: a pointer to string
-*	
+*
 *	Return: string length
 **/
 int	_strlen(char *s)
@@ -34,6 +34,8 @@ char	*_strdup(char *str)
 	int		i;
 
 	i = 0;
+	if (!str)
+		return (NULL);
 	dup = (char *) malloc(sizeof(char) * _strlen(str) + 1);
 	if (dup == NULL)
 		return (0);

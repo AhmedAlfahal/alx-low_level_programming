@@ -46,12 +46,12 @@ int	**alloc_grid(int width, int height)
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	new = malloc(sizeof(int **) * height);
+	new = malloc(sizeof(int *) * height);
 	if (!new)
 		return (NULL);
 	while (i < height)
 	{
-		new[i] = malloc(sizeof(int *) * width);
+		new[i] = malloc(sizeof(int) * width);
 		if (!new[i])
 			return (NULL);
 		_memset(new[i], 0, width);

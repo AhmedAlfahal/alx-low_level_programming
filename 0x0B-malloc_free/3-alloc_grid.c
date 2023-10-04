@@ -28,6 +28,24 @@ void	_memset(void *s, char b, unsigned int n)
 }
 
 /**
+*	alx_free - free 2d array
+*
+*	@tmp: int **
+*
+*	@size: int
+*
+*	Return: nothing
+*
+**/
+
+void	alx_free(int **tmp, int size)
+{
+	for (int i = 0; i < size; i++)
+		free(tmp[i]);
+	free(tmp);
+}
+
+/**
 *	alloc_grid - allocate grid
 *
 *	@width: int
@@ -53,7 +71,7 @@ int	**alloc_grid(int width, int height)
 	{
 		new[i] = malloc(sizeof(int) * width);
 		if (!new[i])
-			return (NULL);
+			return (alx_free(new, i - 1),NULL);
 		_memset(new[i], 0, width);
 		i++;
 	}

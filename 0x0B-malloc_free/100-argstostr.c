@@ -108,7 +108,7 @@ char	*argstostr(int ac, char **av)
 
 	if (!av || !*av)
 		return (NULL);
-	while (i < ac - 1)
+	while (i < ac)
 		new = str_concat(new, av[i++]);
 	return (new);
 }

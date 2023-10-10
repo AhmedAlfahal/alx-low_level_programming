@@ -1,46 +1,75 @@
 #include "dog.h"
+#include <strings.h>
 
 /**
- * _strdup - to print num of args
- * @str: string to duplicate
- * Return: a pointer to the new string
- */
-char	*_strdup(char *str)
+*	_strlen - fins length of string
+*
+*	@s: a pointer to string
+*
+*	Return: string length
+**/
+int	_strlen(char *s)
 {
-	char	*new;
-	int		i;
+	int	l;
 
-	if (!str)
-		return (NULL);
-	i = 0;
-	while (str[i])
-		i++;
-	new = malloc(sizeof(char) * (i + 1));
-	if (!new)
-		return (NULL);
-	i = -1;
-	while (str[++i])
-		new[i] = str[i];
-	new[i] = str[i];
-	return (new);
+	if (!s)
+		return (0);
+	l = 0;
+	while (s[l] != 0)
+		l++;
+	return (l);
 }
 
 /**
- * new_dog - see code
- * @name: an argue
- * @age: an argue
- * @owner: an argue
- * Return: new struct
- */
+*	_strdup - duplicate a string
+*
+*	@str: char *
+*
+*	Return: the pointer to the string or NULL
+*
+**/
+
+char	*_strdup(char *str)
+{
+	char	*dup;
+	int		i;
+
+	i = 0;
+	if (!str)
+		return (NULL);
+	dup = (char *) malloc(sizeof(char) * _strlen(str) + 1);
+	if (dup == NULL)
+		return (0);
+	while (str[i])
+	{
+		dup[i] = str[i];
+		i++;
+	}
+	dup[i] = '\0';
+	return (dup);
+}
+
+/**
+*	new_dog - initilizing a dog
+*
+*	@name: char *
+*
+*	@age: float
+*
+*	@owner: char *
+*
+*  Return: return a pointer to the new dog
+**/
+
 dog_t	*new_dog(char *name, float age, char *owner)
 {
-	dog_t	*d;
+	dog_t	*tmp;
 
-	d = malloc(sizeof(dog_t) * 1);
-	if (!d)
-		return (NULL);
-	d->name = _strdup(name);
-	d->age = age;
-	d->owner = _strdup(owner);
-	return (d);
+	tmp = malloc(sizeof(dog_t) * 1);
+	if (!tmp)
+		return (free(tmp), NULL);
+	tmp->name = _strdup(name);
+	tmp->age = age;
+	tmp->owner = _strdup(owner);
+	return (tmp);
 }

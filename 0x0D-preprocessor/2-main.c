@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define _FILE_
-
 /**
  * main - check the code
  *
@@ -9,6 +7,6 @@
  */
 int main(void)
 {
-	printf(_FILE_"\n");
+	printf(__FILE__"\n");
 	return (0);
 }

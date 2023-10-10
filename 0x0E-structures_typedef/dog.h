@@ -1,0 +1,23 @@
+#ifndef DOG_H
+#define DOG_H
+
+/**
+*	struct dog - dog representive
+*
+*	@name: char *
+*
+*	@age: float
+*
+*	@owner: char *
+*
+*	Description: dog and who owns it and his age and the owner.
+**/
+
+typedef struct Dog
+{
+	char	*name;
+	float	age;
+	char	*owner;
+}			t_dog;
+
+#endif

@@ -15,9 +15,9 @@ int sum_them_all(const unsigned int n, ...)
 	unsigned int sum, i = 0;
 	va_list mylist;
 
+	va_start(mylist, n);
 	if (n == 0)
 		return (0);
-	va_start(mylist, n);
 	sum = n;
 	while (i < n)
 	{

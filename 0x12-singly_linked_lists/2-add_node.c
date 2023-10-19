@@ -49,7 +49,9 @@ list_t *add_node(list_t **head, const char *str)
 			return (free(tmp), NULL);
 		tmp->next = NULL;
 	}
-	if ((*head) == NULL)
+	if (!head)
+		return (tmp);
+	else if ((*head) == NULL)
 	{
 		(*head) = tmp;
 		return (*head);

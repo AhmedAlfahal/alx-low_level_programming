@@ -45,8 +45,6 @@ list_t *add_node(list_t **head, const char *str)
 	else
 	{
 		tmp->str = strdup(str);
-		if (!tmp->str)
-			return (free(tmp), NULL);
 		tmp->next = NULL;
 	}
 	if (!head)

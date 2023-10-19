@@ -36,8 +36,8 @@ list_t *add_node(list_t **head, const char *str)
 {
 	list_t	*tmp = malloc(sizeof(list_t) * 1);
 
-	if (!tmp || !head)
-		return (free(tmp), NULL);
+	if (!tmp)
+		return (NULL);
 	bzero(tmp, sizeof(list_t) * 1);
 	tmp->len = _strlen(str);
 	if (tmp->len == 0)

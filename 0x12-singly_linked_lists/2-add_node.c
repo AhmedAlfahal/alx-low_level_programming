@@ -34,8 +34,6 @@ int	_strlen(const char *s)
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t	*h = *head;
-	list_t	*b = NULL;
 	list_t	*tmp = malloc(sizeof(list_t) * 1);
 
 	if (!tmp)
@@ -57,13 +55,9 @@ list_t *add_node(list_t **head, const char *str)
 	if ((*head) == NULL)
 	{
 		(*head) = tmp;
-		return (tmp);
+		return (*head);
 	}
-	while (h)
-	{
-		b = h;
-		h = h->next;
-	}
-	b->next = tmp;
+	tmp->next = (*head);
+	(*head) = tmp;
 	return (*head);
 }

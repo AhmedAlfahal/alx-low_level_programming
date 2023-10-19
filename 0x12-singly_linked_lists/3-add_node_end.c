@@ -32,7 +32,7 @@ int	_strlen(const char *s)
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	list_t	*h = *head;
+	list_t	*h = NULL;
 	list_t	*b = NULL;
 	list_t	*tmp = malloc(sizeof(list_t) * 1);
 
@@ -40,23 +40,16 @@ list_t *add_node_end(list_t **head, const char *str)
 		return (NULL);
 	bzero(tmp, sizeof(list_t) * 1);
 	tmp->len = _strlen(str);
-	if (tmp->len == 0)
-		tmp->str = NULL;
-	else
-	{
-		tmp->str = strdup(str);
-		if (!tmp->str)
-		{
-			free(tmp);
-			return (NULL);
-		}
-		tmp->next = NULL;
-	}
-	if ((*head) == NULL)
+	tmp->str = strdup(str);
+	tmp->next = NULL;
+	if (!head)
+		return (tmp);
+	else if (!(*head))
 	{
 		(*head) = tmp;
 		return (tmp);
 	}
+	h = (*head);
 	while (h)
 	{
 		b = h;

@@ -19,8 +19,7 @@ int main(void)
     add_node(&head, "Bennett");
     add_node(&head, "Bilal");
     add_node(&head, "Chandler");
-    add_node(&head, "Damian");
-    add_node(NULL, "Daniel");
+    add_node(NULL, "Damian");
     print_list(head);
     return (0);
 }

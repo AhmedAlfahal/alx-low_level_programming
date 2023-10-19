@@ -40,20 +40,9 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	bzero(tmp, sizeof(list_t) * 1);
 	tmp->len = _strlen(str);
-	if (tmp->len == 0)
-		tmp->str = NULL;
-	else
-	{
-		tmp->str = strdup(str);
-		tmp->next = NULL;
-	}
+	tmp->str = strdup(str);
 	if (!head)
 		return (tmp);
-	else if ((*head) == NULL)
-	{
-		(*head) = tmp;
-		return (*head);
-	}
 	tmp->next = (*head);
 	(*head) = tmp;
 	return (tmp);

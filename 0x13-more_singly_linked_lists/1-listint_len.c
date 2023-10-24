@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stddef.h>
 
 /**
 *	listint_len - returns the size of the list

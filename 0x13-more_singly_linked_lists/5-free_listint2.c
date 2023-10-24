@@ -1,26 +1,32 @@
 #include "lists.h"
 
 /**
-*	free_listint2 - free the list
+*	_free_listint - free recersion
 *
 *	@head: listint_t *
 *
-*	Return: void
+*	Return: Void
+**/
+void	_free_listint(listint_t *head)
+{
+	if (!head)
+		return;
+	_free_listint(head->next);
+	free(head);
+}
+
+/**
+*	free_listint2 - free int list
+*
+*	@head: listint_t *
+*
+*	Return: Void
 **/
 
-void free_listint2(listint_t **head)
+void	free_listint2(listint_t **head)
 {
-	listint_t	*h = (*head)->next;
-	listint_t	*tmp = h;
-
-	if (!h || !head)
+	if (!head)
 		return;
-	while (h)
-	{
-		tmp = h;
-		h = h->next;
-		free(tmp);
-	}
-	free((*head));
-	(*head) = NULL;
+	_free_listint(*head);
+	*head = NULL;
 }

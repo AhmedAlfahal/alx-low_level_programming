@@ -7,7 +7,7 @@
 *
 *	@index: unsigned int
 *
-*	Return: the element that was removed
+*	Return: the node at the index
 **/
 
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)

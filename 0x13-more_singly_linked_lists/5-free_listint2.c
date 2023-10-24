@@ -10,8 +10,8 @@
 
 void free_listint2(listint_t **head)
 {
-	listint_t	*h = *head;
-	listint_t	*tmp = *head;
+	listint_t	*h = (*head)->next;
+	listint_t	*tmp = h;
 
 	if (!h || !head)
 		return;
@@ -21,5 +21,6 @@ void free_listint2(listint_t **head)
 		h = h->next;
 		free(tmp);
 	}
+	free((*head));
 	(*head) = NULL;
 }

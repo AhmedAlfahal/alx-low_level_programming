@@ -1,43 +1,50 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - check the code
- * @head: holds the pointer to the first element
- * @idx: index to inject a new node
- * @n: int to put in the new node
- * Return: address of new node;
- */
-listint_t	*insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
+*	insert_nodeint_at_index - insert the node at @idx'th index
+*
+*	@head: listint_t **
+*
+*	@idx: unsigned int
+*
+*	@n: int
+*
+*	Return: the node at the index
+**/
+
+listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i;
-	listint_t *new;
-	listint_t *temp = *head;
+	unsigned int	i = 0;
+	listint_t		*h = NULL;
+	listint_t		*tmp = NULL;
 
-	new = malloc(sizeof(listint_t));
-	if (!new || !head)
+	if (!head || !(*head))
 		return (NULL);
-
-	new->n = n;
-	new->next = NULL;
-
-	if (idx == 0)
+	h = (*head);
+	tmp = h;
+	while (h && i < idx - 1)
 	{
-		new->next = *head;
-		*head = new;
-		return (new);
+		h = h->next;
+		i++;
 	}
-
-	for (i = 0; temp && i < idx; i++)
+	if (i == idx - 1 || (i == 0 && idx == 0))
 	{
-		if (i == idx - 1)
+		if (h->next)
 		{
-			new->next = temp->next;
-			temp->next = new;
-			return (new);
+			tmp = h->next;
+			h->next = malloc(sizeof(listint_t));
+			h->next->n = n;
+			h->next->next = tmp;
 		}
 		else
-			temp = temp->next;
-	}
+		{
+			h->next = malloc(sizeof(listint_t));
+			h->next->n = n;
+			h->next->next = NULL;
 
-	return (NULL);
+		}
+		return (h->next);
+	}
+	else
+		return (NULL);
 }
